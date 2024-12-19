@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		title Login flow
+		link(rel="stylesheet" href="css/app.min.css")
+
+	body
+
+		include partials/mixins.pug
+
+		// Пример использования миксинов
+		//include components
+
+		// Кнопка
+		//- +button('submit', 'Отправить', 'btn-primary', 'submitButton')
+
+		// Инпут
+		//- +input('text', 'username', 'Введите имя пользователя', 'usernameInput', 'input-field', true)
+
+		// Подключаем оптимизированное изображение
+		//- img(src="images/image.webp" alt="Alt")
+
+		#step1.step
+			form#loginForm
+				label(for="email") Email:
+				input(type="email" id="email" name="email" placeholder="Введите email")
+				#emailError.error
+
+				label(for="password") Пароль:
+				input(type="password" id="password" name="password" placeholder="Введите пароль")
+				#passwordError.error
+				
+				+button('submit', 'Продолжить', 'btn-primary', 'submitButton') 
+
+				//- button(type="submit") Продолжить
+
+		#step2.step.hidden
+			form#codeForm
+				label(for="code") Введите код из Google Authenticator:
+				#codeContainer
+					input(type="text" maxlength="1" class="code-input" id="code1")
+					input(type="text" maxlength="1" class="code-input" id="code2")
+					input(type="text" maxlength="1" class="code-input" id="code3")
+					input(type="text" maxlength="1" class="code-input" id="code4")
+					input(type="text" maxlength="1" class="code-input" id="code5")
+					input(type="text" maxlength="1" class="code-input" id="code6")
+				#codeError.error
+				button(type="submit") Подтвердить
+
+		#step3.step.hidden
+			h2 Добро пожаловать!
+			button#logoutButton Выйти из профиля
+
+		//Подключаем скрипты проекта
+		script(src="js/app.min.js")
