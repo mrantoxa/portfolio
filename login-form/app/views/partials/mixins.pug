@@ -1,6 +1,6 @@
 // Миксин для кнопки
-mixin button(type, text, className = '', id = '')
-  button(type=type class=className id=id)&attributes(attributes) #{text}
+mixin button(text)
+  button&attributes(attributes)= text
 
 // Миксин для инпута
 mixin input(type, name, placeholder = '', id = '', className = '', required = false)
