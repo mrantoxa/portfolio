@@ -1,42 +1,45 @@
 doctype html
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Карта пациента
-    link(rel="stylesheet" href="css/app.min.css")
-  
-  body
-    h1 Карта пациента
-    form#patientForm
-      label(for="ownerName") Имя и Фамилия владельца:
-      input#ownerName(type="text" name="ownerName" required)
-      br
-      br
+	head
+		meta(charset="UTF-8")
+		title Kropp Fitness Club
+		link(rel="stylesheet" href="css/app.min.css")
 
-      label(for="phone") Телефон:
-      input#phone(type="tel" name="phone" required)
-      br
-      br
+	body
 
-      label(for="petName") Имя питомца:
-      input#petName(type="text" name="petName" required)
-      br
-      br
+		include partials/mixins.pug
 
-      label(for="weight") Вес (кг):
-      input#weight(type="number" name="weight" step="0.1" required)
-      br
-      br
+		+mainHeader()
 
-      label(for="age") Возраст (лет):
-      input#age(type="number" name="age" required)
-      br
-      br
-
-      button(type="button" onclick="generatePDF()") Сгенерировать PDF
-
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js")
-    script(src="js/app.min.js")
+		main.content
+			h1.visually-hidden Kropp Fitness Club
+			section.banner
+				h2.visually-hidden Upcoming Events
+				.banner-body 
+					.banner-body-info 
+						img.banner-body-icon(
+							src="./icons/bold-arrow-down-right.svg" 
+							width="194" 
+							height="194" 
+							alt=""
+							loading="lazy"
+						)
+						p 
+							| New event 
+							br
+							| Coming up / 2024, Dec
+							time(datetime='2024-12-24') 24
+							|  - 
+							time(datetime='2024-12-25') 25
+					h3.banner-body-title CrossFit
+				.banner-pagination
+					ul.banner-pagination-list
+						li.banner-pagination-item
+							button.banner-pagination-button.is-active(type="button")
+						li.banner-pagination-item
+							button.banner-pagination-button(type="button")
+						li.banner-pagination-item
+							button.banner-pagination-button(type="button")
+							
+		// Include project scripts
+		script(src="js/app.min.js")

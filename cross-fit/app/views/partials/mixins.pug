@@ -1,0 +1,43 @@
+// Mixin for button with a text
+mixin bookButton(text)
+  button.header-book-button.button(type='button')&attributes(attributes)= text
+
+// Mixin for button with a text and an icon
+mixin openMenuButton(title)
+  button.header-burger-button(type='button' title=title)&attributes(attributes)
+    span.visually-hidden= title
+    svg(width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+      path(d="M0 1H5.5" stroke="white")
+      path(d="M16.5 1H22" stroke="white")
+      path(d="M0 6H5.5" stroke="white")
+      path(d="M16.5 6H22" stroke="white")
+      path(d="M0 11H5.5" stroke="white")
+      path(d="M16.5 11H22" stroke="white")
+
+// Mixin for input
+mixin input(type, name, placeholder = '', id = '', className = '', required = false)
+  input(type=type name=name id=id placeholder=placeholder class=className required=required)&attributes(attributes)
+
+// Mixin for header
+mixin header(text)
+  header&attributes(attributes)= text
+
+mixin mainHeader()
+  header.header
+    a.header-logo-wrap(href='/index.html')
+      img.header-logo-img(src='images/logo.webp', alt='Kropp Logo', width='135', height='25', loading='lazy')
+    nav.header-menu
+      ul.header-menu-list
+        li.header-menu-item
+          a.header-menu-link.is-current(href='/') Home
+        li.header-menu-item
+          a.header-menu-link(href='/') Pages
+        li.header-menu-item
+          a.header-menu-link(href='/') Portfolio
+        li.header-menu-item
+          a.header-menu-link(href='/') Blog
+        li.header-menu-item
+          a.header-menu-link(href='/') Shop
+    .header-actions 
+      +bookButton('Book Now')
+      +openMenuButton('Open Menu')

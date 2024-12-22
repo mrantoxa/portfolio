@@ -86,6 +86,10 @@ gulp.task("fonts", () =>
   gulp.src(`${root_dir}/fonts/**/*`).pipe(gulp.dest(`${out_dir}/fonts/`))
 );
 
+gulp.task("icons", () =>
+  gulp.src(`${root_dir}/icons/**/*`).pipe(gulp.dest(`${out_dir}/icons/`))
+);
+
 gulp.task("pug-watch", gulp.series("pug"), (done) => {
   browserSync.reload();
   done();
@@ -108,5 +112,8 @@ gulp.task("watch", () => {
   gulp.watch(`${root_dir}/fonts/**/*`, gulp.series("fonts"));
 });
 
-gulp.task("build", gulp.series("sass", "pug", "scripts", "imagemin", "fonts"));
+gulp.task(
+  "build",
+  gulp.series("sass", "pug", "scripts", "imagemin", "fonts", "icons")
+);
 gulp.task("default", gulp.series("build", "watch"));
