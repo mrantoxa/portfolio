@@ -1,8 +1,14 @@
-function showStep(stepId) {
+function showStep(step) {
   document
     .querySelectorAll(".step")
     .forEach((step) => step.classList.add("hidden"));
-  document.getElementById(stepId).classList.remove("hidden");
+  document.getElementById(step).classList.remove("hidden");
+  if (step === "step2") {
+    hideLoginTitle();
+    document.getElementById("code1").focus();
+  } else if (step === "step1") {
+    showLoginTitle();
+  }
 }
 
 // Function to reset all inputs
@@ -19,32 +25,51 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const emailError = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
+const loginTitle = document.getElementById("loginTitle");
+
+function hideLoginTitle() {
+  loginTitle.style.display = "none";
+}
+
+function showLoginTitle() {
+  loginTitle.style.display = "block";
+}
 
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
-  let isValid = true;
 
+  // Reset error messages
   emailError.textContent = "";
   passwordError.textContent = "";
 
-  // Улучшенная валидация email
-  if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-    emailError.textContent = "Введите корректный email.";
-    isValid = false;
-  }
+  try {
+    let hasErrors = false;
 
-  // Добавлена проверка на спецсимволы в пароле
-  if (!email.includes("@") || !email.includes(".")) {
-    emailError.textContent = "Пожалуйста, введите правильный email адрес";
-    emailError.style.color = "red";
-    isValid = false;
-  }
+    // Enhanced email validation
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+      emailError.textContent = "Please enter a valid email address";
+      emailError.style.color = "red";
+      hasErrors = true;
+    }
 
-  if (isValid) {
+    // Password validation - required field
+    if (!password) {
+      passwordError.textContent = "Password is required";
+      passwordError.style.color = "red";
+      hasErrors = true;
+    }
+
+    if (hasErrors) {
+      throw new Error("Validation failed");
+    }
+
+    hideLoginTitle();
     showStep("step2");
+  } catch (error) {
+    // Errors are already displayed
   }
 });
 
@@ -62,20 +87,14 @@ codeForm.addEventListener("submit", (event) => {
 
   if (code !== "123456") {
     // Example correct code
-    codeError.textContent = "Код введён неверно.";
-    return;
-  }
-
-  if (code !== "123456") {
-    // Example correct code
-    codeError.textContent = "Код введён неверно.";
+    codeError.textContent = "Invalid code";
     return;
   }
 
   showStep("step3");
 });
 
-// Automatically move between code inputs
+// Auto moving between code inputs
 codeInputs.forEach((input, index) => {
   input.addEventListener("input", () => {
     if (input.value.length === 1 && index < codeInputs.length - 1) {
