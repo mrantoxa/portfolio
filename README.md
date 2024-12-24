@@ -11,7 +11,7 @@
 
 ### Web Developer  
 **Bld Soft** — *2023-Настоящее время*  
-- Участвовал в создании сайта [Setplex Developers](https://setplex.com/developers-dev/index.html).  
+- Участвовал в создании веб приложения [Setplex Developers](https://setplex.com/developers-dev/index.html).  
 - Ведение и доработка проектов Setplex.com, Tvalb.com, Nimitv.com
 
 ### Seo, managment, web development 
