@@ -8,49 +8,36 @@ html(lang="en")
 	body
 
 		include partials/mixins.pug
-
-		// Пример использования миксинов
-		//include components
-
-		// Кнопка
-		//- +button('submit', 'Отправить', 'btn-primary', 'submitButton')
-
-		// Инпут
-		//- +input('text', 'username', 'Введите имя пользователя', 'usernameInput', 'input-field', true)
-
-		// Подключаем оптимизированное изображение
-		//- img(src="images/image.webp" alt="Alt")
-
+		#loginTitle
+			h1 Login form
 		#step1.step
 			form#loginForm
 				label(for="email") Email:
-				input(type="email" id="email" name="email" placeholder="Введите email")
+				input(type="email" id="email" name="email" placeholder="Enter your email")
 				#emailError.error
 
-				label(for="password") Пароль:
-				input(type="password" id="password" name="password" placeholder="Введите пароль")
+				label(for="password") Password:
+				input(type="password" id="password" name="password" placeholder="Enter your password")
 				#passwordError.error
 				
-				+button('Продолжить')(type="submit")
-
-				//- button(type="submit") Продолжить
+				+button('Continue')(type="submit")
 
 		#step2.step.hidden
 			form#codeForm
-				label(for="code") Введите код из Google Authenticator:
-				#codeContainer
-					input(type="text" maxlength="1" class="code-input" id="code1")
-					input(type="text" maxlength="1" class="code-input" id="code2")
-					input(type="text" maxlength="1" class="code-input" id="code3")
-					input(type="text" maxlength="1" class="code-input" id="code4")
-					input(type="text" maxlength="1" class="code-input" id="code5")
-					input(type="text" maxlength="1" class="code-input" id="code6")
+				label(for="code") Provide Google Authenticator Code:
+				#codeContainer.code-container
+					input(type="text" maxlength="1" class="code-input" id="code1" autocomplete="off" autofocus)
+					input(type="text" maxlength="1" class="code-input" id="code2" autocomplete="off")
+					input(type="text" maxlength="1" class="code-input" id="code3" autocomplete="off")
+					input(type="text" maxlength="1" class="code-input" id="code4" autocomplete="off")
+					input(type="text" maxlength="1" class="code-input" id="code5" autocomplete="off")
+					input(type="text" maxlength="1" class="code-input" id="code6" autocomplete="off")
 				#codeError.error
-				button(type="submit") Подтвердить
+				button(type="submit") Confirm
 
 		#step3.step.hidden
-			h2 Добро пожаловать!
-			button#logoutButton Выйти из профиля
+			h2 Welcom to Dashboard!
+			button#logoutButton Logout
 
-		//Подключаем скрипты проекта
+		//Include project scripts
 		script(src="js/app.min.js")
