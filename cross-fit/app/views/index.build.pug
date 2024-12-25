@@ -40,6 +40,141 @@ html(lang="en")
 							button.banner-pagination-button(type="button")
 						li.banner-pagination-item
 							button.banner-pagination-button(type="button")
-							
+			
+			section.motivation
+				h2.visually-hidden CrossFit
+				.motivation-list
+					.motivation-item
+						.motivation-card.container
+							.motivation-card-body
+								h3.motivation-card-title.backdrop-title.title-medium(data-title='Strong')
+									| Be you, just stronger!
+									br
+									| Power is in you
+								.motivation-card-description
+									p 
+										| CrossFit is a fitness program that combines elements of various sports, including weightlifting, gymnastics, and endurance. It is designed to improve overall fitness, strength, and endurance.
+								a.motivation-card-link.button.transparent(href='/')
+									| View more
+							picture.motivation-card-image-wrap
+								source(
+									srcset='./images/h1-img-1.webp'
+									type='image/webp'
+								)
+								source(
+									srcset='./images/h1-img-1.png'
+									type='image/png'
+								)
+								img.motivation-card-image(
+									src='./images/h1-img-1.png'
+									alt='Man with a barbell'
+									width='518'
+									height='760'
+									loading='lazy'
+								)
+					.motivation-item
+						.motivation-card.container
+							.motivation-card-body
+								h3.motivation-card-title.backdrop-title.title-medium(data-title='Start')
+									| Today is the best
+									br
+									| day to start!
+								.motivation-card-description
+									p 
+										| Sed abhorreant constituam consectetuer eu. At mei clita deserunt, his movet molestie nemore.
+								a.motivation-card-link.button.transparent(href='/')
+									| View more
+							picture.motivation-card-image-wrap
+								source(
+									srcset='./images/h1-img-2.webp'
+									type='image/webp'
+								)
+								source(
+									srcset='./images/h1-img-2.png'
+									type='image/png'
+								)
+								img.motivation-card-image(
+									src='./images/h1-img-2.png'
+									alt='Man with a fitness equipment'
+									width='518'
+									height='760'
+									loading='lazy'
+								)
+
+			section.trainig-types
+				ul.trainig-types-list
+					+training-type-item("./icons/brand-logo-1.svg", "Maxpump")
+    
+					li.training-type-item
+						img.training-type-item-image(
+							src="./icons/brand-logo-2.svg" 
+							width="140" 
+							height="142" 
+							alt=""
+							loading="lazy"
+						)
+						h3.training-type-item-title Aron gym
+					li.training-type-item
+						img.training-type-item-image(
+							src="./icons/brand-logo-3.svg" 
+							width="140" 
+							height="142" 
+							alt=""
+							loading="lazy"
+						)
+						h3.training-type-item-title Fit & Tone
+					li.training-type-item
+						img.training-type-item-image(
+							src="./icons/brand-logo-4.svg" 
+							width="140" 
+							height="142" 
+							alt=""
+							loading="lazy"
+						)
+						h3.training-type-item-title Forza
+					li.training-type-item
+						img.training-type-item-image(
+							src="./icons/brand-logo-5.svg" 
+							width="140" 
+							height="142" 
+							alt=""
+							loading="lazy"
+						)
+						h3.training-type-item-title balance fitness
+					li.training-type-item
+						img.training-type-item-image(
+							src="./icons/brand-logo-3.svg" 
+							width="140" 
+							height="142" 
+							alt=""
+							loading="lazy"
+						)
+						h3.training-type-item-title Body Sculpt
+			section.join-us
+				.join-us-video-wrapper
+					video.join-us-video(
+						src="./videos/join-us.mp4"
+						width="960"
+						height="680"
+						autoplay
+						loop
+						muted
+						poster="./images/video-poster.png"
+					)
+					button.join-us-video-button(type="button") Play
+				.join-us-body.container
+					h2.join-us-body-title Join Us
+					form.join-us-form
+						header.join-us-form-header
+							h3.join-us-form-header-title.backdrop-title.center.title-big(data-title='Go') Start here
+							p.join-us-form-header-description
+								| Fill the form below to start your journey
+						.join-us-form-body
+							label.visually-hidden(for="name") Your name
+							input.join-us-form-input.input(type="text" placeholder="Your name" id="username")
+							label.visually-hidden(for="email") Your email
+							input.join-us-form-input.input(type="email" placeholder="Your email" id="email")
+							button.join-us-form-button.button.transparent(type="submit") Subscribe
+
 		// Include project scripts
 		script(src="js/app.min.js")

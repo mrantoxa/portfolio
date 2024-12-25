@@ -25,7 +25,22 @@ mixin header(text)
 mixin mainHeader()
   header.header
     a.header-logo-wrap(href='/index.html')
-      img.header-logo-img(src='images/logo.webp', alt='Kropp Logo', width='135', height='25', loading='lazy')
+      picture
+        source(
+          srcset='images/logo.webp'
+          type='image/webp'
+        )
+        source(
+          srcset='images/logo.png'
+          type='image/png'
+        )
+        img.header-logo-img(
+          src='images/logo.png'
+          alt='Kropp Logo'
+          width='135'
+          height='25'
+          loading='lazy'
+        )
     nav.header-menu
       ul.header-menu-list
         li.header-menu-item
@@ -41,3 +56,14 @@ mixin mainHeader()
     .header-actions 
       +bookButton('Book Now')
       +openMenuButton('Open Menu')
+
+mixin training-type-item(image, title)
+  li.training-type-item
+    img.training-type-item-image(
+      src=image
+      width="140"
+      height="142"
+      alt=title
+      loading="lazy"
+    )
+    h3.training-type-item-title= title
