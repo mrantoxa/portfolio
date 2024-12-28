@@ -1,0 +1,33 @@
+.color-blocks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.color-block {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-block:hover {
+  transform: scale(1.05);
+}
+
+.controls {
+  margin: 20px;
+}
+
+.hex-value {
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
