@@ -32,7 +32,7 @@
 
 1. Клонировать репозиторий:
 
-git clone [url-репозитория]
+git clone https://github.com/mrantoxa/portfolio/tree/main/apps-js
 
 2. Установить зависимости:
 
