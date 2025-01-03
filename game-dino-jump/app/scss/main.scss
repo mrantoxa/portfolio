@@ -34,6 +34,37 @@
   }
 }
 
+#cloud-1 {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  background-image: url(../images/cloud-1.png);
+  background-size: 20px 40px;
+  top: 110px;
+  left: 580px;
+  animation: cactusMov 2s infinite linear;
+}
+
+#cloud-1 {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  background-image: url(../images/cloud-2.png);
+  background-size: 20px 40px;
+  top: 110px;
+  left: 580px;
+  animation: cactusMov 2s infinite linear;
+}
+
+@keyframes cloudMov {
+  0% {
+    left: 580px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
 .jump {
   animation: jump 0.3s linear;
 }
