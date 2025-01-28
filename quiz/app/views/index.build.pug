@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Quiz
+    link(rel="stylesheet" href="css/app.min.css")
+  
+  body
+    main.main 
+      #quiz.quiz-container
+        .quiz-header
+          #progress Question 1 of 5
+          #count-down
+        .quiz-question
+          #question-heading Question
+        .quiz-body
+          ul#answers-list
+            //- li
+            //-   input#answer0.answer(type='radio', name='answer')
+            //-   label(for='answer0') Answer
+        .summary
+        button#submit-answer Next
+        button#restart-quiz.hide Re-start quiz
+          
+
+        
+      
+    
+    script(src="js/app.min.js")
