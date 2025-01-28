@@ -101,7 +101,7 @@ html(lang="en")
 									loading='lazy'
 								)
 
-			section.trainig-types
+			section.trainig-types.container-wide
 				ul.trainig-types-list
 					+training-type-item("./icons/brand-logo-1.svg", "Maxpump")
     
@@ -175,6 +175,19 @@ html(lang="en")
 							label.visually-hidden(for="email") Your email
 							input.join-us-form-input.input(type="email" placeholder="Your email" id="email")
 							button.join-us-form-button.button.transparent(type="submit") Subscribe
+			section.location.container-wide
+				.location-map
+					img(
+						src="./images/map.png"
+						alt="Map"
+						width="100%"
+						height="auto"
+						loading="lazy"
+					)
+				.location-body
+					h2.location-title.title-meidum.backdrop-title.centered(data-title='Look') Our Location
+					p.location-description Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quam error voluptatem saepe beatae, alias consectetur voluptate ipsam totam deserunt, dignissimos voluptas unde voluptatum dolores? Dignissimos, aspernatur porro. Fugiat, veritatis!
+					a.loctaion-button.button.transparent View more
 
 		// Include project scripts
 		script(src="js/app.min.js")
